@@ -1,0 +1,13 @@
+{
+    container {
+        name "todos"
+        model "Todo"
+
+        storage {
+            backend "sqlite"
+            namespace "local.todos"
+        }
+
+        service "type_serverd"
+    }
+}

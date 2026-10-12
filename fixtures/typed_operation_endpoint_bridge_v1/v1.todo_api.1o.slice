@@ -1,0 +1,19 @@
+{
+    slice {
+        name "todo_api"
+        model "Todo"
+        container "todos"
+
+        operation {
+            name "todo.create"
+            action "create"
+            capability "todo.write"
+        }
+
+        operation {
+            name "todo.read"
+            action "read"
+            capability "todo.read"
+        }
+    }
+}

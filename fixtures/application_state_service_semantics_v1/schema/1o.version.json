@@ -1,0 +1,13 @@
+{
+  "versions": {
+    "v1": {
+      "application_state": "v1",
+      "application_slice": "v1",
+      "application_action": "v1",
+      "application_service": "v1",
+      "application_effect": "v1",
+      "slice": "v1",
+      "nodeplan": "v1"
+    }
+  }
+}

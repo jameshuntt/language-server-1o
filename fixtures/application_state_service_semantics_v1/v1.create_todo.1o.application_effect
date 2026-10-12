@@ -1,0 +1,12 @@
+{
+    application_effect {
+        name "CreateTodoEffect"
+        slice "InventorySlice"
+        trigger_action "CreateTodo"
+        service "InventoryService"
+        operation "todo.create"
+        request_type "TodoCreateInput"
+        response_type "Todo"
+        success_action "TodoCreated"
+    }
+}

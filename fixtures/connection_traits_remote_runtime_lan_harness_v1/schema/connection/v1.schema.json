@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "1o reusable runtime connection profile v1",
+  "type": "object",
+  "properties": {
+    "connection": {
+      "type": "object",
+      "properties": {
+        "adapter": {
+          "type": "string",
+          "enum": [
+            "rustls_tcp",
+            "thunderbolt_bridge_rustls_tcp"
+          ]
+        },
+        "endpoint": {
+          "type": "string"
+        },
+        "server_name": {
+          "type": "string"
+        },
+        "trust": {
+          "type": "object",
+          "properties": {
+            "mode": {
+              "type": "string",
+              "enum": [
+                "pinned_certificate"
+              ]
+            },
+            "certificate_file": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "mode",
+            "certificate_file"
+          ]
+        },
+        "timeouts": {
+          "type": "object",
+          "properties": {
+            "connect_ms": {
+              "type": "integer"
+            },
+            "io_ms": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "connect_ms",
+            "io_ms"
+          ]
+        },
+        "framing": {
+          "type": "object",
+          "properties": {
+            "max_frame_bytes": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "max_frame_bytes"
+          ]
+        },
+        "bind_policy": {
+          "type": "object",
+          "properties": {
+            "allow_loopback": {
+              "type": "boolean"
+            },
+            "allow_unspecified": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "allow_loopback",
+            "allow_unspecified"
+          ]
+        },
+        "acceptance_profile": {
+          "type": "string",
+          "enum": [
+            "development_loopback",
+            "second_physical_machine_lan",
+            "second_physical_machine_thunderbolt"
+          ]
+        },
+        "thunderbolt": {
+          "type": "object",
+          "properties": {
+            "interface": {
+              "type": "string"
+            },
+            "local_ip": {
+              "type": "string"
+            },
+            "peer_ip": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "interface",
+            "local_ip",
+            "peer_ip"
+          ]
+        }
+      },
+      "required": [
+        "adapter",
+        "endpoint",
+        "server_name",
+        "trust",
+        "timeouts",
+        "framing",
+        "bind_policy",
+        "acceptance_profile"
+      ]
+    }
+  },
+  "required": [
+    "connection"
+  ]
+}

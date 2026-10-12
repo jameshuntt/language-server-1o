@@ -1,0 +1,6 @@
+{
+    service {
+        name "type_serverd"
+        runtime "runtime-type-serverd-real"
+    }
+}

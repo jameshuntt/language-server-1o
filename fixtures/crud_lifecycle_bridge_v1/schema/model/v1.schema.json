@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "1o type_serverd model declaration v1",
+  "type": "object",
+  "properties": {
+    "model": {
+      "type": "object",
+      "properties": {
+        "name": {"type": "string"},
+        "field": {
+          "type": "object",
+          "properties": {
+            "name": {"type": "string"},
+            "type": {
+              "type": "object",
+              "properties": {
+                "uuid": {
+                  "type": "object",
+                  "properties": {
+                    "version": {"type": "string", "enum": ["v4", "v5"]},
+                    "namespace": {"type": "string"},
+                    "input": {
+                      "type": "object",
+                      "properties": {
+                        "field": {"type": "string"}
+                      }
+                    }
+                  },
+                  "required": ["version"]
+                },
+                "string": {
+                  "type": "object",
+                  "properties": {
+                    "min_length": {"type": "integer"},
+                    "max_length": {"type": "integer"}
+                  }
+                },
+                "integer": {
+                  "type": "object",
+                  "properties": {
+                    "signed": {"type": "boolean"},
+                    "bits": {"type": "integer"},
+                    "min": {"type": "integer"},
+                    "max": {"type": "integer"}
+                  },
+                  "required": ["signed", "bits"]
+                },
+                "bool": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          },
+          "required": ["name", "type"]
+        }
+      },
+      "required": ["name", "field"]
+    }
+  },
+  "required": ["model"]
+}

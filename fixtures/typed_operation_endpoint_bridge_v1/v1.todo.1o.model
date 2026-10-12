@@ -1,0 +1,32 @@
+{
+    model {
+        name "Todo"
+
+        field {
+            name "id"
+            type {
+                uuid {
+                    version "v4"
+                }
+            }
+        }
+
+        field {
+            name "title"
+            type {
+                string {
+                    min_length 1
+                    max_length 256
+                }
+            }
+        }
+
+        field {
+            name "completed"
+            type {
+                bool {
+                }
+            }
+        }
+    }
+}

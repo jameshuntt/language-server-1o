@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "1o application slice declaration v1",
+  "type": "object",
+  "properties": {
+    "application_slice": {
+      "type": "object",
+      "properties": {
+        "name": {"type": "string"},
+        "state": {"type": "string", "x-1o-workspace-ref": "application_state"}
+      },
+      "required": ["name", "state"]
+    }
+  },
+  "required": ["application_slice"]
+}

@@ -1,0 +1,8 @@
+# Minimal manifest satisfying NodePlan operator registration (fixture template).
+[package]
+name = "one_o_ws_application_state_service_semantics_v1"
+version = "0.0.0"
+edition = "2021"
+
+[lib]
+path = "src/lib.rs"

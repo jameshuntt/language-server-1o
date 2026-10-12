@@ -1,0 +1,11 @@
+{
+  "versions": {
+    "v1": {
+      "model": "v1",
+      "container": "v1",
+      "nodeplan": "v1",
+      "slice": "v1",
+      "endpoint": "v1"
+    }
+  }
+}

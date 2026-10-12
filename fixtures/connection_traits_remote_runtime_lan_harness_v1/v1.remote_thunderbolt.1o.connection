@@ -1,0 +1,28 @@
+{
+    connection {
+        adapter "thunderbolt_bridge_rustls_tcp"
+        endpoint "10.77.0.2:9443"
+        server_name "10.77.0.2"
+        trust {
+            mode "pinned_certificate"
+            certificate_file "lan-harness-server-cert.pem"
+        }
+        timeouts {
+            connect_ms 5000
+            io_ms 5000
+        }
+        framing {
+            max_frame_bytes 1048576
+        }
+        bind_policy {
+            allow_loopback false
+            allow_unspecified false
+        }
+        thunderbolt {
+            interface "bridge0"
+            local_ip "10.77.0.1"
+            peer_ip "10.77.0.2"
+        }
+        acceptance_profile "second_physical_machine_thunderbolt"
+    }
+}

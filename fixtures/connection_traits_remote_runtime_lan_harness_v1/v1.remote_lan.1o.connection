@@ -1,0 +1,23 @@
+{
+    connection {
+        adapter "rustls_tcp"
+        endpoint "192.168.1.243:9443"
+        server_name "192.168.1.243"
+        trust {
+            mode "pinned_certificate"
+            certificate_file "lan-harness-server-cert.pem"
+        }
+        timeouts {
+            connect_ms 5000
+            io_ms 5000
+        }
+        framing {
+            max_frame_bytes 1048576
+        }
+        bind_policy {
+            allow_loopback false
+            allow_unspecified false
+        }
+        acceptance_profile "second_physical_machine_lan"
+    }
+}

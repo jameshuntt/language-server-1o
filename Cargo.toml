@@ -1,0 +1,21 @@
+[package]
+name = "language-server-1o"
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+description = "Portable 1o language server (LSP) with schema discovery and AST export"
+repository = "https://github.com/jameshuntt/language-server-1o"
+
+[dependencies]
+core-1o = "0.1.0"
+anyhow = "1"
+crossbeam-channel = "0.5"
+lsp-server = "0.7.9"
+lsp-types = "0.97.0"
+percent-encoding = "2.3.2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+walkdir = "2.5"
+
+[dev-dependencies]
+tempfile = "3"

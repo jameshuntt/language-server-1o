@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "1o local NodePlan workspace link v1",
+  "type": "object",
+  "properties": {
+    "nodeplan": {
+      "type": "object",
+      "properties": {
+        "workspace_id": {"type": "string"},
+        "connection": {
+          "type": "object",
+          "properties": {
+            "kind": {"type": "string", "enum": ["local_registry"]}
+          },
+          "required": ["kind"]
+        }
+      },
+      "required": ["workspace_id", "connection"]
+    }
+  },
+  "required": ["nodeplan"]
+}

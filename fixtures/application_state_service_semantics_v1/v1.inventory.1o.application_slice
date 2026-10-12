@@ -1,0 +1,6 @@
+{
+    application_slice {
+        name "InventorySlice"
+        state "InventoryState"
+    }
+}

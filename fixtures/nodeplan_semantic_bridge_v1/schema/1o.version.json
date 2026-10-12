@@ -1,0 +1,8 @@
+{
+  "versions": {
+    "v1": {
+      "service": "v1",
+      "nodeplan": "v1"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+    application_action {
+        name "CreateTodo"
+        slice "InventorySlice"
+        payload_type "TodoCreateInput"
+    }
+}

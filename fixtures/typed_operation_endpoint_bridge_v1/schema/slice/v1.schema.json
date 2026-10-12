@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "1o typed operation slice declaration v1",
+  "type": "object",
+  "properties": {
+    "slice": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string",
+          "x-1o-workspace-ref": "model"
+        },
+        "container": {
+          "type": "string",
+          "x-1o-workspace-ref": "container"
+        },
+        "operation": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "action": {
+              "type": "string",
+              "enum": [
+                "create",
+                "read",
+                "update",
+                "tombstone"
+              ]
+            },
+            "capability": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "action",
+            "capability"
+          ]
+        }
+      },
+      "required": [
+        "name",
+        "model",
+        "container",
+        "operation"
+      ]
+    }
+  },
+  "required": [
+    "slice"
+  ]
+}

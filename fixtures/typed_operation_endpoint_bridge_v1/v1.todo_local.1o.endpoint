@@ -1,0 +1,18 @@
+{
+    endpoint {
+        name "todo_local"
+        service "type_serverd"
+
+        route {
+            method "POST"
+            path "/todos"
+            operation "todo.create"
+        }
+
+        route {
+            method "GET"
+            path "/todos/:id"
+            operation "todo.read"
+        }
+    }
+}

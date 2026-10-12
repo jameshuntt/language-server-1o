@@ -1,0 +1,8 @@
+{
+    application_service {
+        name "InventoryService"
+        contract "InventoryService"
+        service "type_serverd"
+        binding "remote_nodeplan"
+    }
+}

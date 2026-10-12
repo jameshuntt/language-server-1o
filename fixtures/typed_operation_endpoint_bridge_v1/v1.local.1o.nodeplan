@@ -1,0 +1,8 @@
+{
+    nodeplan {
+        workspace_id "nodeplan-real-service-pilot"
+        connection {
+            kind "local_registry"
+        }
+    }
+}

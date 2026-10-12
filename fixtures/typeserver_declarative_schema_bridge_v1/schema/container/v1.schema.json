@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "1o type_serverd container declaration v1",
+  "type": "object",
+  "properties": {
+    "container": {
+      "type": "object",
+      "properties": {
+        "name": {"type": "string"},
+        "model": {"type": "string", "x-1o-workspace-ref": "model"},
+        "storage": {
+          "type": "object",
+          "properties": {
+            "backend": {"type": "string", "enum": ["sqlite"]},
+            "namespace": {"type": "string"}
+          },
+          "required": ["backend", "namespace"]
+        },
+        "service": {"type": "string", "x-1o-semantic-ref": "nodeplan.service"}
+      },
+      "required": ["name", "model", "storage", "service"]
+    }
+  },
+  "required": ["container"]
+}

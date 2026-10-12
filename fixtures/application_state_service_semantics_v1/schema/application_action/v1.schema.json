@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "1o application action declaration v1",
+  "type": "object",
+  "properties": {
+    "application_action": {
+      "type": "object",
+      "properties": {
+        "name": {"type": "string"},
+        "slice": {"type": "string", "x-1o-workspace-ref": "application_slice"},
+        "payload_type": {"type": "string"}
+      },
+      "required": ["name", "slice", "payload_type"]
+    }
+  },
+  "required": ["application_action"]
+}

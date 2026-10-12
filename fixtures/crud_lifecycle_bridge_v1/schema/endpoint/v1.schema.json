@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "1o typed endpoint binding declaration v1",
+  "type": "object",
+  "properties": {
+    "endpoint": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "service": {
+          "type": "string",
+          "x-1o-semantic-ref": "nodeplan.service"
+        },
+        "route": {
+          "type": "object",
+          "properties": {
+            "method": {
+              "type": "string",
+              "enum": [
+                "POST",
+                "GET",
+                "PATCH",
+                "DELETE"
+              ]
+            },
+            "path": {
+              "type": "string"
+            },
+            "operation": {
+              "type": "string",
+              "x-1o-workspace-ref": "operation"
+            }
+          },
+          "required": [
+            "method",
+            "path",
+            "operation"
+          ]
+        }
+      },
+      "required": [
+        "name",
+        "service",
+        "route"
+      ]
+    }
+  },
+  "required": [
+    "endpoint"
+  ]
+}

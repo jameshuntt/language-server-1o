@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "1o application effect declaration v1",
+  "type": "object",
+  "properties": {
+    "application_effect": {
+      "type": "object",
+      "properties": {
+        "name": {"type": "string"},
+        "slice": {"type": "string", "x-1o-workspace-ref": "application_slice"},
+        "trigger_action": {"type": "string", "x-1o-workspace-ref": "application_action"},
+        "service": {"type": "string", "x-1o-workspace-ref": "application_service"},
+        "operation": {"type": "string", "x-1o-workspace-ref": "operation"},
+        "request_type": {"type": "string"},
+        "response_type": {"type": "string"},
+        "success_action": {"type": "string", "x-1o-workspace-ref": "application_action"}
+      },
+      "required": ["name", "slice", "trigger_action", "service", "operation", "request_type", "response_type", "success_action"]
+    }
+  },
+  "required": ["application_effect"]
+}

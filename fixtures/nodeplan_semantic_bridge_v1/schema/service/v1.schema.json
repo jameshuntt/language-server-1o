@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "1o NodePlan service semantic bridge v1",
+  "type": "object",
+  "properties": {
+    "service": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "x-1o-semantic-ref": "nodeplan.service"
+        },
+        "runtime": {
+          "type": "string",
+          "x-1o-semantic-ref": "nodeplan.runtime"
+        },
+        "connection": {
+          "type": "string",
+          "x-1o-semantic-ref": "nodeplan.connection"
+        },
+        "handler": {
+          "type": "string",
+          "x-1o-semantic-ref": "nodeplan.handler"
+        },
+        "function": {
+          "type": "string",
+          "x-1o-semantic-ref": "nodeplan.function"
+        },
+        "capability": {
+          "type": "string",
+          "x-1o-semantic-ref": "nodeplan.capability"
+        }
+      },
+      "required": ["name", "runtime"]
+    }
+  },
+  "required": ["service"]
+}
